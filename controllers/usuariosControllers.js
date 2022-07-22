@@ -13,7 +13,7 @@ exports.obtenerUsuarios = async(req = request,res= response)=>{
     }
  }
 
-
+   
 exports.crearUsuario = async(req = request,res= response)=>{
         try {
 

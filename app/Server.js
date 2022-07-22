@@ -1,4 +1,5 @@
-const  {coneccionDB} = require("../db/conectarDb");
+const mongoose = require("mongoose");
+
 
 
 
@@ -25,7 +26,12 @@ class App {
 
 
     conectarDB(){
-       coneccionDB();
+          mongoose.connect(process.env.MONGODB_CNN).then(res=>{ 
+              console.log("base de datos conectada") 
+            }).catch(err=>{
+            console.log("no se conecto ala base de datos");  
+            console.log(err);
+          })
     }
 
     servidores(){

@@ -26,6 +26,6 @@ routes.put("/editarUsuario",editarUsuario);
 
 
 routes.delete("/eliminarUsuario",eliminarUsuario)
-
+   
 
 module.exports = routes;

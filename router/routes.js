@@ -1,26 +1,19 @@
 const express = require("express");
+const { crearUsuario, obtenerUsuarios, editarUsuario, eliminarUsuario } = require("../controllers/usuariosControllers");
 const routes = express.Router();
 
 
 
-routes.get("/usuarios",(req,res)=>{
-    res.json({msg: "vemos plantilla inicial"});
-})
+routes.get("/usuarios",obtenerUsuarios)
 
 
-routes.post("/crearUsuario",(req,res)=>{
-   res.json({msg: "crear un usuario -POST",user: req.body});
-})
+routes.post("/crearUsuario",crearUsuario)
 
 
-routes.put("/editarUsuario",(req,res)=>{
-    res.json({msg: "editar usuario -PUT"})
-});
+routes.put("/editarUsuario",editarUsuario);
 
 
-routes.delete("/eliminarUsuario",(req,res)=>{
-   res.json({msg: "eliminar usuario -DELETE"})
-})
+routes.delete("/eliminarUsuario",eliminarUsuario)
 
 
 module.exports = routes;

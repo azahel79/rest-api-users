@@ -1,5 +1,6 @@
 
 
+
 class App {
 
     constructor(){
@@ -22,6 +23,8 @@ class App {
     }
 
 
+    
+
     servidores(){
         this.app.use("/",require("../router/routes"));
     }
@@ -29,7 +32,7 @@ class App {
 
     listen(){
       this.app.listen(this.app.get("port"),()=>{
-        console.log(`http://localhost:${this.app.get("port")}`);
+        console.log(`server in port -> http://localhost:${this.app.get("port")}`);
       })
     }
    

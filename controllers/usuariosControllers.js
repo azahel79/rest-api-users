@@ -19,6 +19,14 @@ exports.crearUsuario = async(req = request,res= response)=>{
 
             const errors = validationResult(req);
             if(!errors.isEmpty())  return res.status(500).json(errors.array());
+
+            
+            const userExisting = await usuarioModel.findOne({email});
+
+            if(userExisting){
+                return res.status(400).json({msg: "este usuario ya existe"});
+            }
+             
             req.body.password = await bcryptjs.hashSync(req.body.password,9);     
             // CREAR UN NUEVO USUARIO
             const newUser = new usuarioModel(req.body);

@@ -5,5 +5,5 @@ const aplicacion = new App();
 aplicacion.controllers();
 aplicacion.middlewares();
 aplicacion.servidores();
-
+aplicacion.conectarDB();
 aplicacion.listen();

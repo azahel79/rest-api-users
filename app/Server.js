@@ -1,3 +1,4 @@
+const  {coneccionDB} = require("../db/conectarDb");
 
 
 
@@ -23,7 +24,9 @@ class App {
     }
 
 
-    
+    conectarDB(){
+       coneccionDB();
+    }
 
     servidores(){
         this.app.use("/",require("../router/routes"));

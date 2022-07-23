@@ -20,7 +20,7 @@ exports.crearUsuario = async(req = request,res= response)=>{
             const errors = validationResult(req);
             if(!errors.isEmpty())  return res.status(500).json(errors.array());
 
-            
+               
             const userExisting = await usuarioModel.findOne({email: req.body.email});
 
             if(userExisting){

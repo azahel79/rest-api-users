@@ -13,7 +13,7 @@ routes.post("/crearUsuario",[
     check("nombre","nombre min: 3 caracteres").isLength({min: 3}),
     check("email","escribe un email valido").isEmail(),
     check("password","contraseña min: 5 caracteres").isLength({min: 5})
-],crearUsuario)
+],crearUsuario)    
 
 
 routes.put("/editarUsuario",editarUsuario);
